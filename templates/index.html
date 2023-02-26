@@ -3,38 +3,38 @@
 
 <head>
   <title>Build a Sentence</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <h1>Let's Build a Sentence</h1>
-  <form method="Post" action="/sentence">
+  <form method="POST" action="/sentence">
     <p>Select a noun:</p>
-    <select name="noun"></select>
-    {% for noun in noun %}
-    <option value="{{ noun }}">{{ noun }}</option>
-    {% endfor %}
+    <select name="noun">
+      {% for noun in nouns %}
+      <option value="{{ noun }}">{{ noun }}</option>
+      {% endfor %}
     </select>
     <p>Select a verb:</p>
     <select name="verb">
       {% for verb in verbs %}
       <option value="{{ verb }}">{{ verb }}</option>
-      {% end for %}
+      {% endfor %}
     </select>
     <p>Select an adjective:</p>
     <select name="adjective">
-    {% for a adjective in adjectives %}
-    <option value="{{ adjective }}">{{ adjective }}</option>
-    {% end for %}
+      {% for adjective in adjectives %}
+      <option value="{{ adjective }}">{{ adjective }}</option>
+      {% endfor %}
     </select>
     <p>Select an adverb:</p>
     <select name="adverb">
-    {% for a adverb in adverbs %}
-    <option value="{{ adverb }}">{{ adverb }}</option>
-    {% end for %}
+      {% for adverb in adverbs %}
+      <option value="{{ adverb }}">{{ adverb }}</option>
+      {% endfor %}
     </select>
-    <br /><br />
+    <br/><br />
     <button type="submit">Generate Sentence</button>
   </form>
 </body>
+
 </html>
